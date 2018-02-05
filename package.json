@@ -1,0 +1,41 @@
+{
+  "name": "SLAppForage",
+  "email": "info@slappforge.com",
+  "description": "Slappbooks is an accounting application developed to demonstrate the capabilities of Sigma IDE of SLAppForge",
+  "url": "https://slappforge.com",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@blueprintjs/core": "^1.35.0",
+    "@blueprintjs/datetime": "^1.25.1",
+    "axios": "^0.17.1",
+    "md5": "^2.2.1",
+    "moment": "^2.20.1",
+    "node-sass-chokidar": "0.0.3",
+    "react": "^16.2.0",
+    "react-addons-css-transition-group": "^15.6.2",
+    "react-csv": "^1.0.12",
+    "react-datepicker": "^1.0.4",
+    "react-dom": "^16.2.0",
+    "react-flexbox": "^3.1.4",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.0.17",
+    "react-table": "^6.7.6"
+  },
+  "scripts": {
+    "build-css": "node-sass-chokidar src/ -o src/ --watch --recursive",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/slappforge/slappbooks-frontend"
+  },
+  "author": {
+    "name": "Malith Jayaweera",
+    "url": "https://github.com/malithj"
+  },
+  "license": "SEE LICENSE IN LICENSE.md"
+}
