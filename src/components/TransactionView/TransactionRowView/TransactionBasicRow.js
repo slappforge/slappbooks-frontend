@@ -75,12 +75,12 @@ class TransactionBasicRow extends React.Component {
     render() {
         return (
             <View auto style={{
-                flexDirection: 'row-inverse',
+                flex:1,
+                flexDirection: 'row',
                 padding: 0.2,
-                alignItems: 'stretch',
-                justifyContent: 'left'
+                justifyContent: 'space-between',
             }}>
-                <View column width="">
+                <View column style={{padding: 2}}>
                     <label className="pt-label pt-inline" htmlFor="entity">
                         Entity
                         <div className="pt-select pt-inline">
@@ -90,13 +90,13 @@ class TransactionBasicRow extends React.Component {
                         </div>
                     </label>
                 </View>
-                <View column width="290px">
+                <View column style={{padding: 2}}>
                     <label className="pt-label pt-inline" htmlFor="amount">
                         Amount
                         <NumericInput ref="amount" className="pt-input" type="text" name="amount" value={this.state.amount} onValueChange={this.handleAmountChange}></NumericInput>
                     </label>
                 </View>
-                <View column width="80px">
+                <View column style={{padding: 2}}>
                     <label className="pt-label pt-inline" htmlFor="doubleEntry">
 
                         <div className="pt-select pt-inline">

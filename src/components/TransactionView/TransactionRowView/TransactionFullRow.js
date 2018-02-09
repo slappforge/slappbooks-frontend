@@ -57,58 +57,44 @@ class TransactionFullRow extends React.Component {
     };
 
     render() {
-        return (<div>
+        return (
             <View auto style={{
-                flexDirection: 'row-inverse',
+                flexDirection: 'row',
                 padding: 0.2,
-                alignItems: 'stretch',
-                justifyContent: 'left'
+                justifyContent: 'space-between'
             }}>
                 <TransactionBasicRow handleEntityChangeCallBack={this.props.handleEntityChangeCallBack}
                                    handleAmountChangeCallBack={this.props.handleAmountChangeCallBack}
                                    handleCreditChangeCallBack={this.props.handleCreditChangeCallBack} amount={this.props.amount} key={0} entityList={this.props.entityList}/>
-                <View column width="200px">
+                <View column style={{padding: 2}}>
                     <DatePicker name={"date"} dateFormat="YYYY-MM-DD" placeholderText={"MM-DD-YYYY"} selected={this.state.startDate} className={"pt-input on-top pt-round pt-datepicker-footer"}
                                 onChange={this.handleChange}
-                    />;
+                    />
                 </View>
-                <View column width="310px">
-                    <View column width="300px">
-                        <input className={"pt-input pt-round pt-fill"} type="text" placeholder="Notes" name="notes" />
-                    </View>
-                    <View column width="10px">
-                    </View>
+                <View column style={{padding: 2}} width="300px">
+                    <input className={"pt-input pt-round pt-fill"} type="text" placeholder="Notes" name="notes" />
                 </View>
-                <View column width="120px">
-                    <View column width="110px">
-                        <input className={"pt-input pt-round pt-fill"} type="text" placeholder="Cheque No" name="cheque" />
-                    </View>
-                    <View column width="10px">
-                    </View>
+                <View column style={{padding: 2}} width="100px">
+                    <input className={"pt-input pt-round pt-fill"} type="text" placeholder="Cheque No" name="cheque" />
                 </View>
-                <View column width="120px">
-                    <View column width="110px">
-                        <input className={"pt-input pt-round pt-fill"} type="text" placeholder="Voucher No" name="voucher" />
-                    </View>
-                    <View column width="10px">
-                    </View>
+                <View column style={{padding: 2}} width="100px">
+                    <input className={"pt-input pt-round pt-fill"} type="text" placeholder="Voucher No" name="voucher" />
                 </View>
-                <View column width="40px">
+                <View column style={{padding: 2}}>
                     <Tooltip content="Split transaction between multiple entities"
                              position={Position.RIGHT}>
                         <Button iconName="pt-icon-add" className="pt-intent-primary"
                                 onClick={this.addFormSpace.bind(this)}/>
                     </Tooltip>
                 </View>
-                <View column width="40px">
+                <View column style={{padding: 2}}>
                     <Tooltip content="Delete transaction entity"
                              position={Position.RIGHT}>
                         <Button iconName="pt-icon-delete" className="pt-intent-danger"
                                 onClick={this.removeFormSpace.bind(this)}/>
                     </Tooltip>
                 </View>
-            </View>
-        </div>)
+            </View>)
     }
 }
 

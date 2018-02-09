@@ -93,7 +93,7 @@ class EntityTable extends React.Component {
 
     refresh  =(month, year) => {
         this.setState({loading: true});
-        transactionService.getTransactions(this.state.entityName, 0, 5, [], [],month, year, (res) => {
+        transactionService.getTransactions(this.props.entityName, 0, 5, [], [],month, year, (res) => {
             let values = res.data.rows;
             values.forEach(key => {
                 key.amount = key.amount.toLocaleString();
@@ -142,7 +142,7 @@ class EntityTable extends React.Component {
                         justifyContent: 'left'
                     }}>
                         <View column width="100px">
-                            <h6 className="pt-button">{this.state.entityName}</h6>
+                            <h6 className="pt-button">{this.props.entityName}</h6>
                         </View>
                         <View column width="110px">
                             <label className="pt-label pt-inline" htmlFor="month">
@@ -233,7 +233,7 @@ class EntityTable extends React.Component {
                     manual
                     onFetchData={(state, instance) => {
                         this.setState({loading: true});
-                        transactionService.getTransactions(this.state.entityName, state.page, state.pageSize, state.sorted, state.filtered, this.state.month, this.state.year, (res) => {
+                        transactionService.getTransactions(this.props.entityName, state.page, state.pageSize, state.sorted, state.filtered, this.state.month, this.state.year, (res) => {
                             let values = res.data.rows;
                             values.forEach(key => {
                                 key.amount = key.amount.toLocaleString();

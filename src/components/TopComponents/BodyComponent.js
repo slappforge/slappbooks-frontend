@@ -62,11 +62,15 @@ class BodyComponent extends React.Component {
         this.child.refresh();
     };
 
+    handleEntityRefreshCall = () => {
+        this.populateEntityList();
+    };
+
     render() {
         FocusStyleManager.alwaysShowFocus();
         return (
             <div>
-                <ModifierView handleRefreshCallback={this.handleRefreshCall} entityObjects={this.state.entityObjects} entityList={this.state.entityList} newlyCreatedTransactions={this.addTransactionCallBack}/>
+                <ModifierView handleRefreshCallback={this.handleRefreshCall} handleEntityRefreshCallback={this.handleEntityRefreshCall} entityObjects={this.state.entityObjects} entityList={this.state.entityList} newlyCreatedTransactions={this.addTransactionCallBack}/>
                 <EntityTableView ref={instance => { this.child = instance; }} transactions={this.state.transactionList} entityList={this.state.entityList}/>
             </div>
         );
