@@ -88,6 +88,10 @@ class ModifierView extends React.Component {
         this.props.handleRefreshCallback();
     };
 
+    handleEntityRefreshCallBack = () => {
+        this.props.handleEntityRefreshCallback();
+    };
+
     render() {
         return (
             <div>
@@ -113,10 +117,10 @@ class ModifierView extends React.Component {
                                                          entityObjects={this.props.entityObjects}/>
                             }/>
                             <Tab2 id="addEntity" title="Add Entity" panel={
-                                <AddEntityComponent handleRefreshCallback={this.handleRefreshCallBack}/>
+                                <AddEntityComponent handleRefreshCallback={this.handleEntityRefreshCallBack}/>
                             }/>
                             <Tab2 id="viewEntity" title="View Entity" panel={
-                                <ViewEntityComponent handleRefreshCallback={this.handleRefreshCallBack} entityObjects={this.props.entityObjects}/>
+                                <ViewEntityComponent handleRefreshCallback={this.handleEntityRefreshCallBack} entityObjects={this.props.entityObjects}/>
                             }/>
                         </Tabs2>
                     </div>
